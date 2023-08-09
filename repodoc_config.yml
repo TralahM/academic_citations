@@ -1,0 +1,23 @@
+author_email: briantralah@gmail.com
+author_name: Tralah M Brian
+author_username: TralahM
+console_scripts:
+- crossref = crossref.crossref_cli:main
+install_requires:
+- Pygments
+- backoff
+- re
+- requests
+- requests-cache
+- retry
+- shtab
+language: python
+licence: MIT
+package_name: crossref
+program_description: UnOffical Python Crossref.org API Wrapper and CLI.
+program_name: crossref
+readthedocs: true
+pypi: true
+create_docs: true
+repo_name: academic_citations
+version: '0.1.0'
