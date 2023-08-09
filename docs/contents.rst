@@ -1,7 +1,7 @@
 Quickstart
 ===========
 
-1. Install [Python](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/).
+1. Install https://www.python.org/downloads/ and pip https://pip.pypa.io/en/stable/installing/.
 2. Install the requirements: `pip install crossref`
 3. Run the cli tool: `crossref` (or `python -m crossref.crossref_cli`)
 
@@ -95,4 +95,4 @@ You can also use the library in your own code:
     citation = client.get_work_reference("10.5621/sciefictstud.40.2.0382",style="mla")
     print(citation.text)
 
-For more information, see the [documentation](https://crossref.readthedocs.io/en/latest/).
+For more information, see the https://crossref.readthedocs.io/en/latest/.
