@@ -1,1 +1,7 @@
-sphinx_rtd_theme
+sphinx_rtd_themebackoff
+requests
+retry
+requests-cache
+shtab
+Pygments
+re
