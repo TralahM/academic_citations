@@ -4,4 +4,3 @@ retry
 requests-cache
 shtab
 Pygments
-re
