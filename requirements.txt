@@ -3,3 +3,4 @@ requests
 retry
 requests-cache
 shtab
+Pygments

@@ -2,6 +2,23 @@
 from crossref import CrossRefAPIClient
 from argparse import ArgumentParser
 import json
+from pygments import highlight, lexers, formatters, styles
+
+
+def print_colored_json(
+    formatted_json: str,
+    format_on: bool = False,
+    formatter=formatters.TerminalFormatter(
+        style=styles.get_style_by_name("rainbow_dash"),
+    ),
+):
+    colored = highlight(
+        formatted_json,
+        lexer=lexers.JsonLexer(),
+        formatter=formatter if format_on else formatters.NullFormatter(),
+    )
+    print(colored)
+
 
 select_opts = [
     "DOI",
@@ -71,32 +88,48 @@ def epilog(*args, **kwargs):
     return f"""Author:  {author}. Project:  <{github}>"""
 
 
-def get_citation(args):
-    """
-    Get Citation/ Reference Text In the Specified Style (apa, mla, bibtex, etc).
+def get_citations(args):
+    """Get Citation/ Reference Text of the given DOI In the Specified Style
+    (apa, mla, bibtex, etc).
     """
     client = CrossRefAPIClient(
         api_version=args.api_version,
         api_mailto=args.mailto,
         api_auth_token=args.auth_token,
     )
-    res = client.get_work_reference(args.doi, args.style).text
-    print(res)
+    citations = {}
+    for style in args.style:
+        res = client.get_work_reference(args.doi, style)
+        res = res.content.decode()
+        citations[style] = res.strip()
+    print_colored_json(
+        json.dumps(citations, indent=2, sort_keys=True),
+        format_on=args.format_on,
+    )
     pass
 
 
 def search_works(args):
-    """
-    Returns a list of all works (journal articles, conference proceedings, books, components, etc), 20 per page.
+    """Interact with the Works API. Supports the following parameters:
 
-    Queries:
-    Sort:
-    Facets:
-    Filters:
-    Elements:
-    Pagination with offsets:
-    Deep paging:
-    Sample:
+    - Queries: (query) and (query.field(s))
+
+    - Filters: (filter=type-name:filter)(s) or dot filters (filter=type-name.field-name:filter)(s)
+
+    - Pagination with offsets: (offset) and (rows)
+
+    - Deep paging: (cursor=*) initially and (cursor=next-cursor) in subsequent requests
+
+    - Elements: (select=field-name(s))
+
+    - Sort: (sort) and (order)
+
+    - Facets: (facet=type-name:*)
+
+    - Sample: (sample)
+
+    And returns a list of works (journal articles, conference proceedings,
+    books, components, etc), or a single work (if you specify a DOI).
     """
     client = CrossRefAPIClient(
         api_version=args.api_version,
@@ -114,7 +147,10 @@ def search_works(args):
             }
         )
     res = client.get_works(params).json()
-    print(json.dumps(res))
+    print_colored_json(
+        json.dumps(res, indent=2, sort_keys=True),
+        format_on=args.format_on,
+    )
     pass
 
 
@@ -128,15 +164,20 @@ def get_work(args):
     res = client.get_work(
         doi=args.doi,
     ).json()
-    print(json.dumps(res))
+    print_colored_json(
+        json.dumps(res, indent=2, sort_keys=True),
+        format_on=args.format_on,
+    )
     pass
 
 
 def list_journals(args):
-    """
-    Queries
-    Pagination with offsets
-    Deep paging
+    """Interact with the Journals API. Supports the following parameters:
+    - Queries: (query) and (query.field(s))
+
+    - Pagination with offsets: (offset) and (rows)
+
+    - Deep paging: (cursor=*) initially and (cursor=next-cursor) in subsequent requests
     """
     client = CrossRefAPIClient(
         api_version=args.api_version,
@@ -149,7 +190,10 @@ def list_journals(args):
             "rows": args.rows,
         }
     ).json()
-    print(json.dumps(res))
+    print_colored_json(
+        json.dumps(res, indent=2, sort_keys=True),
+        format_on=args.format_on,
+    )
     pass
 
 
@@ -163,19 +207,22 @@ def get_journal(args):
     res = client.get_journal(
         issn=args.id,
     ).json()
-    print(json.dumps(res))
+    print_colored_json(
+        json.dumps(res, indent=2, sort_keys=True),
+        format_on=args.format_on,
+    )
     pass
 
 
 def list_members(args):
-    """
-    Queries:
+    """Interact with the Members API. Supports the following parameters:
+    - Queries: (query) and (query.field(s))
 
-    Filters:
+    - Pagination with offsets: (offset) and (rows)
 
-    Pagination with offsets:
+    - Deep paging: (cursor=*) initially and (cursor=next-cursor) in subsequent requests
 
-    Deep paging:
+    - Filters: (filter=type-name:filter)(s) or dot filters (filter=type-name.field-name:filter)(s)
     """
     client = CrossRefAPIClient(
         api_version=args.api_version,
@@ -188,7 +235,10 @@ def list_members(args):
             "rows": args.rows,
         }
     ).json()
-    print(json.dumps(res))
+    print_colored_json(
+        json.dumps(res, indent=2, sort_keys=True),
+        format_on=args.format_on,
+    )
     pass
 
 
@@ -204,20 +254,23 @@ def get_member(args):
     res = client.get_member(
         member_id=args.id,
     ).json()
-    print(json.dumps(res))
+    print_colored_json(
+        json.dumps(res, indent=2, sort_keys=True),
+        format_on=args.format_on,
+    )
     pass
 
 
 def list_funders(args):
-    """
-    Queries:
+    """Interact with the Funders API. Supports the following parameters:
+    - Queries: (query) and (query.field(s))
 
-    Filters:
-        - location - funders located in given country
+    - Pagination with offsets: (offset) and (rows)
 
-    Pagination with offsets:
+    - Deep paging: (cursor=*) initially and (cursor=next-cursor) in subsequent requests
 
-    Deep Paging:
+    - Filters: (filter=location:filter)
+        - location = funders located in given country
     """
     client = CrossRefAPIClient(
         api_version=args.api_version,
@@ -230,7 +283,10 @@ def list_funders(args):
             "rows": args.rows,
         }
     ).json()
-    print(json.dumps(res))
+    print_colored_json(
+        json.dumps(res, indent=2, sort_keys=True),
+        format_on=args.format_on,
+    )
     pass
 
 
@@ -246,16 +302,20 @@ def get_funder(args):
     res = client.get_funder(
         funder_id=args.id,
     ).json()
-    print(json.dumps(res))
+    print_colored_json(
+        json.dumps(res, indent=2, sort_keys=True),
+        format_on=args.format_on,
+    )
     pass
 
 
 def list_licenses(args):
-    """
-    Queries
-    Pagination with offsets
-    Deep paging
+    """Interact with the Licenses API. Supports the following parameters:
+    - Queries: (query) and (query.field(s))
 
+    - Pagination with offsets: (offset) and (rows)
+
+    - Deep paging: (cursor=*) initially and (cursor=next-cursor) in subsequent requests
     """
     client = CrossRefAPIClient(
         api_version=args.api_version,
@@ -267,14 +327,17 @@ def list_licenses(args):
             "rows": args.rows,
         }
     ).json()
-    print(json.dumps(res))
+    print_colored_json(
+        json.dumps(res, indent=2, sort_keys=True),
+        format_on=args.format_on,
+    )
     pass
 
 
 def list_types(args):
-    """
-    Pagination with offsets.
+    """Interact with the Types API. Supports the following parameters:
 
+    - Pagination with offsets: (offset) and (rows)
     """
     client = CrossRefAPIClient(
         api_version=args.api_version,
@@ -286,7 +349,10 @@ def list_types(args):
             "rows": args.rows,
         }
     ).json()
-    print(json.dumps(res))
+    print_colored_json(
+        json.dumps(res, indent=2, sort_keys=True),
+        format_on=args.format_on,
+    )
     pass
 
 
@@ -300,21 +366,26 @@ def get_type(args):
     res = client.get_type(
         type_id=args.id,
     ).json()
-    print(json.dumps(res))
+    print_colored_json(
+        json.dumps(res, indent=2, sort_keys=True),
+        format_on=args.format_on,
+    )
     pass
 
 
 def usage(args):
-    return epilog()
+    return args.help_func()
 
 
 def main():
     parser = ArgumentParser(
         epilog=epilog(),
     )
+
     parser.set_defaults(
         func=usage,
         parser=parser,
+        help_func=parser.print_help,
     )
     parser.add_argument(
         "--mailto",
@@ -343,6 +414,14 @@ def main():
         default=20,
         help="Number of Rows to return",
         type=int,
+    )
+
+    parser.add_argument(
+        "--format-on",
+        action="store_true",
+        dest="format_on",
+        default=False,
+        help="Format json output using pygments",
     )
 
     mutexg = parser.add_mutually_exclusive_group(
@@ -374,18 +453,29 @@ def main():
     )
 
     subparsers = parser.add_subparsers(
-        title="subcommands",
+        title="commands",
     )
+
     pub_parser = subparsers.add_parser(
         "pubs",
         help=search_works.__doc__,
+        aliases=[
+            "works",
+            "wrk",
+            "publications",
+            "publication",
+            "w",
+            "p",
+        ],
     )
+
     srch_parsers = pub_parser.add_subparsers(
         title="commands",
     )
     srch_parser = srch_parsers.add_parser(
         "get",
         help="Get Details for this Publication DOI",
+        aliases=["details", "info"],
     )
     srch_parser.add_argument(
         "doi",
@@ -395,6 +485,7 @@ def main():
     srch_parser.set_defaults(
         func=get_work,
     )
+
     pub_parser.add_argument(
         "--select",
         action="store",
@@ -405,6 +496,7 @@ def main():
         type=str,
         help="Subset of Elements to select",
     )
+
     pub_parser.add_argument(
         "-q",
         "--query",
@@ -414,6 +506,7 @@ def main():
         type=str,
         help="search query",
     )
+
     pub_parser.add_argument(
         "--sortby",
         action="store",
@@ -422,6 +515,7 @@ def main():
         type=str,
         help="Sort by element",
     )
+
     pub_parser.add_argument(
         "--sortorder",
         action="store",
@@ -431,6 +525,7 @@ def main():
         help="Sort Order",
         choices=["asc", "desc"],
     )
+
     pub_parser.add_argument(
         "--filters",
         action="store",
@@ -439,6 +534,7 @@ def main():
         type=str,
         help="Filters",
     )
+
     pub_parser.add_argument(
         "--facets",
         action="store",
@@ -447,6 +543,7 @@ def main():
         type=str,
         help="Facets",
     )
+
     pub_parser.set_defaults(
         func=search_works,
         help=search_works.__doc__,
@@ -455,13 +552,16 @@ def main():
     journals_parser = subparsers.add_parser(
         "journals",
         help=list_journals.__doc__,
+        aliases=["journal", "jnl", "j"],
     )
+
     srch_parsers = journals_parser.add_subparsers(
         title="commands",
     )
     srch_parser = srch_parsers.add_parser(
         "get",
         help="Get Details for this Journal ISSN",
+        aliases=["details", "info", "issn"],
     )
     srch_parser.add_argument(
         "id",
@@ -471,6 +571,7 @@ def main():
     srch_parser.set_defaults(
         func=get_journal,
     )
+
     journals_parser.add_argument(
         "-l",
         "--list",
@@ -478,6 +579,7 @@ def main():
         default=True,
         help="List all",
     )
+
     journals_parser.set_defaults(
         func=list_journals,
         help=list_journals.__doc__,
@@ -486,13 +588,16 @@ def main():
     members_parser = subparsers.add_parser(
         "members",
         help=list_members.__doc__,
+        aliases=["member", "m"],
     )
+
     srch_parsers = members_parser.add_subparsers(
         title="commands",
     )
     srch_parser = srch_parsers.add_parser(
         "get",
         help="Get Details for this Member ID",
+        aliases=["details", "info", "id"],
     )
     srch_parser.add_argument(
         "id",
@@ -502,6 +607,7 @@ def main():
     srch_parser.set_defaults(
         func=get_member,
     )
+
     members_parser.add_argument(
         "-l",
         "--list",
@@ -509,6 +615,7 @@ def main():
         default=True,
         help="List all",
     )
+
     members_parser.set_defaults(
         func=list_members,
         help=list_members.__doc__,
@@ -517,13 +624,16 @@ def main():
     funders_parser = subparsers.add_parser(
         "funders",
         help=list_funders.__doc__,
+        aliases=["funder", "f"],
     )
+
     srch_parsers = funders_parser.add_subparsers(
         title="commands",
     )
     srch_parser = srch_parsers.add_parser(
         "get",
         help="Get Details for this Funders ID",
+        aliases=["details", "info", "id"],
     )
     srch_parser.add_argument(
         "id",
@@ -533,6 +643,7 @@ def main():
     srch_parser.set_defaults(
         func=get_funder,
     )
+
     funders_parser.add_argument(
         "-l",
         "--list",
@@ -540,6 +651,7 @@ def main():
         default=True,
         help="List all",
     )
+
     funders_parser.set_defaults(
         func=list_funders,
         help=list_funders.__doc__,
@@ -548,6 +660,7 @@ def main():
     types_parser = subparsers.add_parser(
         "types",
         help=list_types.__doc__,
+        aliases=["type", "t"],
     )
     types_parser.add_argument(
         "-l",
@@ -556,12 +669,14 @@ def main():
         default=True,
         help="List all",
     )
+
     srch_parsers = types_parser.add_subparsers(
         title="commands",
     )
     srch_parser = srch_parsers.add_parser(
         "get",
-        help="Get Details for this Type",
+        help="Get Details for this Type ID",
+        aliases=["details", "info", "id"],
     )
     srch_parser.add_argument(
         "id",
@@ -571,6 +686,7 @@ def main():
     srch_parser.set_defaults(
         func=get_type,
     )
+
     types_parser.set_defaults(
         func=list_types,
         help=list_types.__doc__,
@@ -579,7 +695,9 @@ def main():
     licenses_parser = subparsers.add_parser(
         "licenses",
         help=list_licenses.__doc__,
+        aliases=["license", "lc", "lcs"],
     )
+
     licenses_parser.add_argument(
         "-l",
         "--list",
@@ -587,6 +705,7 @@ def main():
         default=True,
         help="List all",
     )
+
     licenses_parser.set_defaults(
         func=list_licenses,
         help=list_licenses.__doc__,
@@ -594,18 +713,29 @@ def main():
 
     cite_parser = subparsers.add_parser(
         "cite",
-        help=get_citation.__doc__,
+        help=get_citations.__doc__,
+        aliases=[
+            "citation",
+            "citations",
+            "ref",
+            "refs",
+            "reference",
+            "references",
+        ],
+    )
+
+    cite_parser.add_argument(
+        "style",
+        help="Citation Styles to Return. defaults(apa, bibtex, mla).",
+        nargs="*",
+        default=["apa", "bibtex", "mla"],
     )
     cite_parser.add_argument(
         "doi",
         help="DOI of the document to search for.",
     )
-    cite_parser.add_argument(
-        "style",
-        help="Citation Style to Return.",
-        choices=["apa", "bibtex", "mla"],
-    )
-    cite_parser.set_defaults(func=get_citation)
+
+    cite_parser.set_defaults(func=get_citations)
 
     args = parser.parse_args()
     args.func(args)
