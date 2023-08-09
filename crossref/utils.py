@@ -1,4 +1,16 @@
 from pygments import highlight, lexers, formatters, styles
+from crossref import CrossRefAPIClient
+
+
+def create_api_client(args):
+    """Create an API Client."""
+    client = CrossRefAPIClient(
+        api_version=args.api_version,
+        api_mailto=args.mailto,
+        api_auth_token=args.auth_token,
+    )
+    return client
+
 
 def print_colored_json(
     formatted_json: str,

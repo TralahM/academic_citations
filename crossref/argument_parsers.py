@@ -1,4 +1,4 @@
-from argument_checkers import select_opts
+from crossref.argument_checkers import select_opts
 
 
 def parse_sort_args(args):

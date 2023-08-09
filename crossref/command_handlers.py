@@ -1,11 +1,9 @@
 import json
-from utils import (
+from crossref.utils import (
+    create_api_client,
     print_colored_json,
 )
-from __init__ import (
-    create_api_client,
-)
-from argument_parsers import (
+from crossref.argument_parsers import (
     parse_exclude_args,
     parse_facet_args,
     parse_filter_args,

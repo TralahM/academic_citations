@@ -5,22 +5,7 @@ import requests
 import logging
 import urllib.parse
 
-import argument_checkers
-import argument_parsers
-import command_handlers
-import utils
-
 logging.getLogger("backoff").addHandler(logging.StreamHandler())
-
-
-def create_api_client(args):
-    """Create an API Client."""
-    client = CrossRefAPIClient(
-        api_version=args.api_version,
-        api_mailto=args.mailto,
-        api_auth_token=args.auth_token,
-    )
-    return client
 
 
 class CrossRefAPIClient:

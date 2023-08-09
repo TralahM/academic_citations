@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from argparse import ArgumentParser
-from argument_checkers import (
+from crossref.argument_checkers import (
     select_opts,
     works_sort_opts,
     works_query_fields_type,
@@ -8,7 +8,7 @@ from argument_checkers import (
     works_filter_type,
     funders_filter_type,
 )
-from command_handlers import (
+from crossref.command_handlers import (
     get_citations,
     get_funder,
     get_journal,
