@@ -7,92 +7,92 @@ Quickstart
 
 You can also use the library in your own code:
 
-```python
-from crossref import CrossrefAPIClient
-client = CrossrefAPIClient()
+.. code-block:: python
 
-works = client.get_works(
-    {
-        "rows": 20,
-        "query": "Machine learning",
-    }
-)
-print(works.json())
+    from crossref import CrossrefAPIClient
+    client = CrossrefAPIClient()
 
-work = client.get_work("10.5621/sciefictstud.40.2.0382")
-print(work.json())
+    works = client.get_works(
+        {
+            "rows": 20,
+            "query": "Machine learning",
+        }
+    )
+    print(works.json())
 
-funders = client.get_funders(
-    {
-        "rows": 20,
-        "query": "Machine learning",
-    }
-)
+    work = client.get_work("10.5621/sciefictstud.40.2.0382")
+    print(work.json())
 
-print(funders.json())
+    funders = client.get_funders(
+        {
+            "rows": 20,
+            "query": "Machine learning",
+        }
+    )
 
-funder = client.get_funder("100000003")
+    print(funders.json())
 
-print(funder.json())
+    funder = client.get_funder("100000003")
 
-members = client.get_members(
-    {
-        "rows": 20,
-        "query": "Machine learning",
-    }
-)
+    print(funder.json())
 
-print(members.json())
+    members = client.get_members(
+        {
+            "rows": 20,
+            "query": "Machine learning",
+        }
+    )
 
-member = client.get_member("1")
+    print(members.json())
 
-journals = client.get_journals(
-    {
-        "rows": 20,
-        "query": "Machine learning",
-    }
-)
+    member = client.get_member("1")
 
-print(journals.json())
+    journals = client.get_journals(
+        {
+            "rows": 20,
+            "query": "Machine learning",
+        }
+    )
 
-journal = client.get_journal("2167-8359")
+    print(journals.json())
 
-print(journal.json())
+    journal = client.get_journal("2167-8359")
 
-types = client.get_types(
-    {
-        "rows": 20,
-        "query": "Machine learning",
-    }
-)
+    print(journal.json())
 
-print(types.json())
+    types = client.get_types(
+        {
+            "rows": 20,
+            "query": "Machine learning",
+        }
+    )
 
-type = client.get_type("journal-article")
+    print(types.json())
 
-print(type.json())
+    type = client.get_type("journal-article")
 
-licenses = client.get_licenses(
-    {
-        "rows": 20,
-        "query": "Machine learning",
-    }
-)
+    print(type.json())
 
-print(licenses.json())
+    licenses = client.get_licenses(
+        {
+            "rows": 20,
+            "query": "Machine learning",
+        }
+    )
 
-prefix = client.get_prefix("10.1038")
+    print(licenses.json())
 
-print(prefix.json())
+    prefix = client.get_prefix("10.1038")
 
-citation = client.get_work_reference("10.5621/sciefictstud.40.2.0382",style="apa")
-print(citation.text)
+    print(prefix.json())
 
-citation = client.get_work_reference("10.5621/sciefictstud.40.2.0382",style="bibtex")
-print(citation.text)
+    citation = client.get_work_reference("10.5621/sciefictstud.40.2.0382",style="apa")
+    print(citation.text)
 
-citation = client.get_work_reference("10.5621/sciefictstud.40.2.0382",style="mla")
-print(citation.text)
-```
+    citation = client.get_work_reference("10.5621/sciefictstud.40.2.0382",style="bibtex")
+    print(citation.text)
+
+    citation = client.get_work_reference("10.5621/sciefictstud.40.2.0382",style="mla")
+    print(citation.text)
 
 For more information, see the [documentation](https://crossref.readthedocs.io/en/latest/).
