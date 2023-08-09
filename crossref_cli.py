@@ -399,7 +399,7 @@ def main():
         "--select",
         action="store",
         dest="select",
-        default=None,
+        default=[],
         nargs="*",
         choices=select_opts,
         type=str,
