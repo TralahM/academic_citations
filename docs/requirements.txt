@@ -1,4 +1,5 @@
-sphinx_rtd_themebackoff
+sphinx_rtd_theme
+backoff
 requests
 retry
 requests-cache
