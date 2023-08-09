@@ -18,3 +18,9 @@ Crossref API Reference
    :undoc-members:
    :show-inheritance:
    :inherited-members:
+
+.. automodule:: crossref.argument_checkers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:
