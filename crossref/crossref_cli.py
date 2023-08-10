@@ -74,6 +74,14 @@ def main():
     )
 
     parser.add_argument(
+        "-o",
+        dest="outfile",
+        default=None,
+        help="Json filename to also store the output",
+        type=str,
+    )
+
+    parser.add_argument(
         "--rows",
         dest="rows",
         default=20,

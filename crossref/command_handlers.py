@@ -28,6 +28,9 @@ def get_citations(args):
         json.dumps(citations, indent=2, sort_keys=True),
         format_on=args.format_on,
     )
+    if args.outfile is not None:
+        with open(args.outfile, "w") as wf:
+            json.dump(citations, wf, indent=2, sort_keys=True)
     pass
 
 
@@ -78,6 +81,9 @@ def search_works(args):
         json.dumps(res, indent=2, sort_keys=True),
         format_on=args.format_on,
     )
+    if args.outfile is not None:
+        with open(args.outfile, "w") as wf:
+            json.dump(res, wf, indent=2, sort_keys=True)
     pass
 
 
@@ -91,6 +97,9 @@ def get_work(args):
         json.dumps(res, indent=2, sort_keys=True),
         format_on=args.format_on,
     )
+    if args.outfile is not None:
+        with open(args.outfile, "w") as wf:
+            json.dump(res, wf, indent=2, sort_keys=True)
     pass
 
 
@@ -116,6 +125,9 @@ def list_journals(args):
         json.dumps(res, indent=2, sort_keys=True),
         format_on=args.format_on,
     )
+    if args.outfile is not None:
+        with open(args.outfile, "w") as wf:
+            json.dump(res, wf, indent=2, sort_keys=True)
     pass
 
 
@@ -129,6 +141,9 @@ def get_journal(args):
         json.dumps(res, indent=2, sort_keys=True),
         format_on=args.format_on,
     )
+    if args.outfile is not None:
+        with open(args.outfile, "w") as wf:
+            json.dump(res, wf, indent=2, sort_keys=True)
     pass
 
 
@@ -156,6 +171,9 @@ def list_members(args):
         json.dumps(res, indent=2, sort_keys=True),
         format_on=args.format_on,
     )
+    if args.outfile is not None:
+        with open(args.outfile, "w") as wf:
+            json.dump(res, wf, indent=2, sort_keys=True)
     pass
 
 
@@ -171,6 +189,9 @@ def get_member(args):
         json.dumps(res, indent=2, sort_keys=True),
         format_on=args.format_on,
     )
+    if args.outfile is not None:
+        with open(args.outfile, "w") as wf:
+            json.dump(res, wf, indent=2, sort_keys=True)
     pass
 
 
@@ -201,6 +222,9 @@ def list_funders(args):
         json.dumps(res, indent=2, sort_keys=True),
         format_on=args.format_on,
     )
+    if args.outfile is not None:
+        with open(args.outfile, "w") as wf:
+            json.dump(res, wf, indent=2, sort_keys=True)
     pass
 
 
@@ -216,6 +240,9 @@ def get_funder(args):
         json.dumps(res, indent=2, sort_keys=True),
         format_on=args.format_on,
     )
+    if args.outfile is not None:
+        with open(args.outfile, "w") as wf:
+            json.dump(res, wf, indent=2, sort_keys=True)
     pass
 
 
@@ -243,6 +270,9 @@ def list_licenses(args):
         json.dumps(res, indent=2, sort_keys=True),
         format_on=args.format_on,
     )
+    if args.outfile is not None:
+        with open(args.outfile, "w") as wf:
+            json.dump(res, wf, indent=2, sort_keys=True)
     pass
 
 
@@ -265,6 +295,9 @@ def list_types(args):
         json.dumps(res, indent=2, sort_keys=True),
         format_on=args.format_on,
     )
+    if args.outfile is not None:
+        with open(args.outfile, "w") as wf:
+            json.dump(res, wf, indent=2, sort_keys=True)
     pass
 
 
@@ -278,6 +311,9 @@ def get_type(args):
         json.dumps(res, indent=2, sort_keys=True),
         format_on=args.format_on,
     )
+    if args.outfile is not None:
+        with open(args.outfile, "w") as wf:
+            json.dump(res, wf, indent=2, sort_keys=True)
     pass
 
 
@@ -291,4 +327,7 @@ def get_prefix(args):
         json.dumps(res, indent=2, sort_keys=True),
         format_on=args.format_on,
     )
+    if args.outfile is not None:
+        with open(args.outfile, "w") as wf:
+            json.dump(res, wf, indent=2, sort_keys=True)
     pass
