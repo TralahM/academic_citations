@@ -2,8 +2,43 @@ Quickstart
 ===========
 
 1. Install https://www.python.org/downloads/ and pip https://pip.pypa.io/en/stable/installing/.
-2. Install the requirements: `pip install crossref`
+2. Install the requirements:
+
+.. code-block:: bash
+
+    $ pip install crossref
+
 3. Run the cli tool: `crossref` (or `python -m crossref.crossref_cli`)
+
+.. code-block:: bash
+
+    $ crossref --help
+
+    $ crossref pubs --help
+
+    $ crossref journals --help
+
+    $ crossref members --help
+
+    $ crossref funders --help
+
+    $ crossref cite --help
+
+    $ crossref works --query "Machine learning" --rows 20
+
+    $ crossref work 10.5621/sciefictstud.40.2.0382
+
+    $ crossref funders --query "Machine learning" --rows 20
+
+    $ crossref funders get 100000003
+
+    $ crossref members --query "Machine learning" --rows 20
+
+    $ crossref members get 1
+
+    $ crossref journals --query "Machine learning" --rows 20
+
+    $ crossref journals get 2167-8359
 
 You can also use the library in your own code:
 
