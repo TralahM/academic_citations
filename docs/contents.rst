@@ -8,7 +8,7 @@ Quickstart
 
     $ pip install crossref
 
-3. Run the cli tool: `crossref` (or `python -m crossref.crossref_cli`)
+3. Run the cli tool:
 
 .. code-block:: bash
 
