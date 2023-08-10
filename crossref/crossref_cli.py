@@ -361,6 +361,16 @@ def main():
     )
 
     funders_parser.add_argument(
+        "-q",
+        "--query",
+        action="store",
+        dest="query",
+        default="",
+        type=str,
+        help="search query",
+    )
+
+    funders_parser.add_argument(
         "--filters",
         action="store",
         dest="filters",
