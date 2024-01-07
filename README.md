@@ -31,6 +31,88 @@ pip install -e .
 ```
 ---
 
+## CLI Usage
+
+```console
+usage: crossref [-h] [--mailto MAILTO] [--auth-token AUTH_TOKEN]
+                [--api-version API_VERSION] [-o OUTFILE] [--rows ROWS]
+                [--format-on]
+                [--sample SAMPLE | --offset OFFSET | --cursor CURSOR]
+                {pubs,works,publications,w,p,journals,journal,jnl,j,members,member,m,funders,funder,f,types,type,t,licenses,license,lc,lcs,cite,citation,citations,ref,refs,reference,references,prefix,pre,px}
+                ...
+
+options:
+  -h, --help            show this help message and exit
+  --mailto MAILTO       mailto address for polite users
+  --auth-token AUTH_TOKEN
+                        auth token for authenticated (Plus) users
+  --api-version API_VERSION
+                        API version to use (default=v1)
+  -o OUTFILE            Json filename to also store the output
+  --rows ROWS           Number of Rows to return (default=20)
+  --format-on           Format json output using pygments syntax highlighting?
+  --sample SAMPLE       Sample size
+  --offset OFFSET       Offset
+  --cursor CURSOR       Cursor parameter
+
+commands:
+  {pubs,works,publications,w,p,journals,journal,jnl,j,members,member,m,funders,funder,f,types,type,t,licenses,license,lc,lcs,cite,citation,citations,ref,refs,reference,references,prefix,pre,px}
+    pubs (works, publications, w, p)
+                        Interact with the Works API. Supports the following
+                        parameters: - Queries: (query) and (query.field(s)) -
+                        Filters: (filter=type-name:filter)(s) or dot filters
+                        (filter=type-name.field-name:filter)(s) - Pagination
+                        with offsets: (offset) and (rows) - Deep paging:
+                        (cursor=*) initially and (cursor=next-cursor) in
+                        subsequent requests - Elements: (select=field-name(s))
+                        - Sort: (sort) and (order) - Facets: (facet=type-
+                        name:*) - Sample: (sample) And returns a list of works
+                        (journal articles, conference proceedings, books,
+                        components, etc), or a single work (if you specify a
+                        DOI).
+    journals (journal, jnl, j)
+                        Interact with the Journals API. Supports the following
+                        parameters: - Queries: (query) and (query.field(s)) -
+                        Pagination with offsets: (offset) and (rows) - Deep
+                        paging: (cursor=*) initially and (cursor=next-cursor)
+                        in subsequent requests
+    members (member, m)
+                        Interact with the Members API. Supports the following
+                        parameters: - Queries: (query) and (query.field(s)) -
+                        Pagination with offsets: (offset) and (rows) - Deep
+                        paging: (cursor=*) initially and (cursor=next-cursor)
+                        in subsequent requests - Filters: (filter=type-
+                        name:filter)(s) or dot filters (filter=type-
+                        name.field-name:filter)(s)
+    funders (funder, f)
+                        Interact with the Funders API. Supports the following
+                        parameters: - Queries: (query) and (query.field(s)) -
+                        Pagination with offsets: (offset) and (rows) - Deep
+                        paging: (cursor=*) initially and (cursor=next-cursor)
+                        in subsequent requests - Filters:
+                        (filter=location:filter) - location = funders located
+                        in given country
+    types (type, t)     Interact with the Types API. Supports the following
+                        parameters: - Pagination with offsets: (offset) and
+                        (rows)
+    licenses (license, lc, lcs)
+                        Interact with the Licenses API. Supports the following
+                        parameters: - Queries: (query) and (query.field(s)) -
+                        Pagination with offsets: (offset) and (rows) - Deep
+                        paging: (cursor=*) initially and (cursor=next-cursor)
+                        in subsequent requests
+    cite (citation, citations, ref, refs, reference, references)
+                        Get Citation/ Reference Text of the given DOI In the
+                        Specified Style (apa, mla, bibtex, etc).
+    prefix (pre, px)    Interact with the Types API. Supports the following
+                        parameters: - Pagination with offsets: (offset) and
+                        (rows)
+
+Author: Tralah M Brian (TralahM) <briantralah@gmail.com>. Project:
+<https://github.com/TralahM/academic_citations>
+
+```
+
 ## Documentation
 
 [![Documentation](https://img.shields.io/badge/Docs-crossref-blue.svg?style=for-the-badge)](https://crossref.readthedocs.io)
