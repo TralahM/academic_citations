@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%22machine%20learning%20for%20crime%20detection%22%26id_list%3D%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query="machine learning for crime detection"&amp;id_list=&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/+lCBjRo2T/HekmNmUeMkhFIf5rY</id>
+  <updated>2025-03-18T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/1811.10109v2</id>
+    <updated>2019-08-17T16:13:55Z</updated>
+    <published>2018-11-25T22:09:26Z</published>
+    <title>The Anatomy of a Cryptocurrency Pump-and-Dump Scheme</title>
+    <summary>  While pump-and-dump schemes have attracted the attention of cryptocurrency
+observers and regulators alike, this paper represents the first detailed
+empirical query of pump-and-dump activities in cryptocurrency markets. We
+present a case study of a recent pump-and-dump event, investigate 412
+pump-and-dump activities organized in Telegram channels from June 17, 2018 to
+February 26, 2019, and discover patterns in crypto-markets associated with
+pump-and-dump schemes. We then build a model that predicts the pump likelihood
+of all coins listed in a crypto-exchange prior to a pump. The model exhibits
+high precision as well as robustness, and can be used to create a simple, yet
+very effective trading strategy, which we empirically demonstrate can generate
+a return as high as 60% on small retail investments within a span of two and
+half months. The study provides a proof of concept for strategic crypto-trading
+and sheds light on the application of machine learning for crime detection.
+</summary>
+    <author>
+      <name>Jiahua Xu</name>
+    </author>
+    <author>
+      <name>Benjamin Livshits</name>
+    </author>
+    <arxiv:doi xmlns:arxiv="http://arxiv.org/schemas/atom">10.5555/3361338.3361450</arxiv:doi>
+    <link title="doi" href="http://dx.doi.org/10.5555/3361338.3361450" rel="related"/>
+    <arxiv:journal_ref xmlns:arxiv="http://arxiv.org/schemas/atom">Proceedings of the 28th USENIX Security Symposium (2019) 1609-1625</arxiv:journal_ref>
+    <link href="http://arxiv.org/abs/1811.10109v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1811.10109v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="q-fin.TR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-fin.TR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

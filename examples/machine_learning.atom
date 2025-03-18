@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%22machine%20learning%22%26id_list%3D%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query="machine learning"&amp;id_list=&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/sKEkF+VgXp//jsbwbIb8xt6DFtU</id>
+  <updated>2025-03-18T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">253188</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/1909.03550v1</id>
+    <updated>2019-09-08T21:49:42Z</updated>
+    <published>2019-09-08T21:49:42Z</published>
+    <title>Lecture Notes: Optimization for Machine Learning</title>
+    <summary>  Lecture notes on optimization for machine learning, derived from a course at
+Princeton University and tutorials given in MLSS, Buenos Aires, as well as
+Simons Foundation, Berkeley.
+</summary>
+    <author>
+      <name>Elad Hazan</name>
+    </author>
+    <link href="http://arxiv.org/abs/1909.03550v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1909.03550v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1909.09246v1</id>
+    <updated>2019-09-19T22:02:00Z</updated>
+    <published>2019-09-19T22:02:00Z</published>
+    <title>Machine Learning for Clinical Predictive Analytics</title>
+    <summary>  In this chapter, we provide a brief overview of applying machine learning
+techniques for clinical prediction tasks. We begin with a quick introduction to
+the concepts of machine learning and outline some of the most common machine
+learning algorithms. Next, we demonstrate how to apply the algorithms with
+appropriate toolkits to conduct machine learning experiments for clinical
+prediction tasks. The objectives of this chapter are to (1) understand the
+basics of machine learning techniques and the reasons behind why they are
+useful for solving clinical prediction problems, (2) understand the intuition
+behind some machine learning models, including regression, decision trees, and
+support vector machines, and (3) understand how to apply these models to
+clinical prediction problems using publicly available datasets via case
+studies.
+</summary>
+    <author>
+      <name>Wei-Hung Weng</name>
+    </author>
+    <link href="http://arxiv.org/abs/1909.09246v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1909.09246v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2301.09753v1</id>
+    <updated>2023-01-23T22:54:34Z</updated>
+    <published>2023-01-23T22:54:34Z</published>
+    <title>Towards Modular Machine Learning Solution Development: Benefits and
+  Trade-offs</title>
+    <summary>  Machine learning technologies have demonstrated immense capabilities in
+various domains. They play a key role in the success of modern businesses.
+However, adoption of machine learning technologies has a lot of untouched
+potential. Cost of developing custom machine learning solutions that solve
+unique business problems is a major inhibitor to far-reaching adoption of
+machine learning technologies. We recognize that the monolithic nature
+prevalent in today's machine learning applications stands in the way of
+efficient and cost effective customized machine learning solution development.
+In this work we explore the benefits of modular machine learning solutions and
+discuss how modular machine learning solutions can overcome some of the major
+solution engineering limitations of monolithic machine learning solutions. We
+analyze the trade-offs between modular and monolithic machine learning
+solutions through three deep learning problems; one text based and the two
+image based. Our experimental results show that modular machine learning
+solutions have a promising potential to reap the solution engineering
+advantages of modularity while gaining performance and data advantages in a way
+the monolithic machine learning solutions do not permit.
+</summary>
+    <author>
+      <name>Samiyuru Menik</name>
+    </author>
+    <author>
+      <name>Lakshmish Ramaswamy</name>
+    </author>
+    <link href="http://arxiv.org/abs/2301.09753v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2301.09753v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1811.04422v1</id>
+    <updated>2018-11-11T14:28:34Z</updated>
+    <published>2018-11-11T14:28:34Z</published>
+    <title>An Optimal Control View of Adversarial Machine Learning</title>
+    <summary>  I describe an optimal control view of adversarial machine learning, where the
+dynamical system is the machine learner, the input are adversarial actions, and
+the control costs are defined by the adversary's goals to do harm and be hard
+to detect. This view encompasses many types of adversarial machine learning,
+including test-item attacks, training-data poisoning, and adversarial reward
+shaping. The view encourages adversarial machine learning researcher to utilize
+advances in control theory and reinforcement learning.
+</summary>
+    <author>
+      <name>Xiaojin Zhu</name>
+    </author>
+    <link href="http://arxiv.org/abs/1811.04422v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1811.04422v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2012.04105v1</id>
+    <updated>2020-12-07T23:10:51Z</updated>
+    <published>2020-12-07T23:10:51Z</published>
+    <title>The Tribes of Machine Learning and the Realm of Computer Architecture</title>
+    <summary>  Machine learning techniques have influenced the field of computer
+architecture like many other fields. This paper studies how the fundamental
+machine learning techniques can be applied towards computer architecture
+problems. We also provide a detailed survey of computer architecture research
+that employs different machine learning methods. Finally, we present some
+future opportunities and the outstanding challenges that need to be overcome to
+exploit full potential of machine learning for computer architecture.
+</summary>
+    <author>
+      <name>Ayaz Akram</name>
+    </author>
+    <author>
+      <name>Jason Lowe-Power</name>
+    </author>
+    <link href="http://arxiv.org/abs/2012.04105v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2012.04105v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AR" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2204.07492v2</id>
+    <updated>2022-06-07T14:48:09Z</updated>
+    <published>2022-04-15T14:48:04Z</published>
+    <title>A Machine Learning Tutorial for Operational Meteorology, Part I:
+  Traditional Machine Learning</title>
+    <summary>  Recently, the use of machine learning in meteorology has increased greatly.
+While many machine learning methods are not new, university classes on machine
+learning are largely unavailable to meteorology students and are not required
+to become a meteorologist. The lack of formal instruction has contributed to
+perception that machine learning methods are 'black boxes' and thus end-users
+are hesitant to apply the machine learning methods in their every day workflow.
+To reduce the opaqueness of machine learning methods and lower hesitancy
+towards machine learning in meteorology, this paper provides a survey of some
+of the most common machine learning methods. A familiar meteorological example
+is used to contextualize the machine learning methods while also discussing
+machine learning topics using plain language. The following machine learning
+methods are demonstrated: linear regression; logistic regression; decision
+trees; random forest; gradient boosted decision trees; naive Bayes; and support
+vector machines. Beyond discussing the different methods, the paper also
+contains discussions on the general machine learning process as well as best
+practices to enable readers to apply machine learning to their own datasets.
+Furthermore, all code (in the form of Jupyter notebooks and Google Colaboratory
+notebooks) used to make the examples in the paper is provided in an effort to
+catalyse the use of machine learning in meteorology.
+</summary>
+    <author>
+      <name>Randy J. Chase</name>
+    </author>
+    <author>
+      <name>David R. Harrison</name>
+    </author>
+    <author>
+      <name>Amanda Burke</name>
+    </author>
+    <author>
+      <name>Gary M. Lackmann</name>
+    </author>
+    <author>
+      <name>Amy McGovern</name>
+    </author>
+    <arxiv:doi xmlns:arxiv="http://arxiv.org/schemas/atom">10.1175/WAF-D-22-0070.1</arxiv:doi>
+    <link title="doi" href="http://dx.doi.org/10.1175/WAF-D-22-0070.1" rel="related"/>
+    <arxiv:journal_ref xmlns:arxiv="http://arxiv.org/schemas/atom">Weather and Forecasting 37 (2022) 1509-1529</arxiv:journal_ref>
+    <link href="http://arxiv.org/abs/2204.07492v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2204.07492v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="physics.ao-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.ao-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2108.07915v1</id>
+    <updated>2021-08-18T00:57:06Z</updated>
+    <published>2021-08-18T00:57:06Z</published>
+    <title>Data Pricing in Machine Learning Pipelines</title>
+    <summary>  Machine learning is disruptive. At the same time, machine learning can only
+succeed by collaboration among many parties in multiple steps naturally as
+pipelines in an eco-system, such as collecting data for possible machine
+learning applications, collaboratively training models by multiple parties and
+delivering machine learning services to end users. Data is critical and
+penetrating in the whole machine learning pipelines. As machine learning
+pipelines involve many parties and, in order to be successful, have to form a
+constructive and dynamic eco-system, marketplaces and data pricing are
+fundamental in connecting and facilitating those many parties. In this article,
+we survey the principles and the latest research development of data pricing in
+machine learning pipelines. We start with a brief review of data marketplaces
+and pricing desiderata. Then, we focus on pricing in three important steps in
+machine learning pipelines. To understand pricing in the step of training data
+collection, we review pricing raw data sets and data labels. We also
+investigate pricing in the step of collaborative training of machine learning
+models, and overview pricing machine learning models for end users in the step
+of machine learning deployment. We also discuss a series of possible future
+directions.
+</summary>
+    <author>
+      <name>Zicun Cong</name>
+    </author>
+    <author>
+      <name>Xuan Luo</name>
+    </author>
+    <author>
+      <name>Pei Jian</name>
+    </author>
+    <author>
+      <name>Feida Zhu</name>
+    </author>
+    <author>
+      <name>Yong Zhang</name>
+    </author>
+    <link href="http://arxiv.org/abs/2108.07915v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2108.07915v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1707.09562v3</id>
+    <updated>2017-10-16T11:13:32Z</updated>
+    <published>2017-07-29T21:59:18Z</published>
+    <title>MLBench: How Good Are Machine Learning Clouds for Binary Classification
+  Tasks on Structured Data?</title>
+    <summary>  We conduct an empirical study of machine learning functionalities provided by
+major cloud service providers, which we call machine learning clouds. Machine
+learning clouds hold the promise of hiding all the sophistication of running
+large-scale machine learning: Instead of specifying how to run a machine
+learning task, users only specify what machine learning task to run and the
+cloud figures out the rest. Raising the level of abstraction, however, rarely
+comes free - a performance penalty is possible. How good, then, are current
+machine learning clouds on real-world machine learning workloads?
+  We study this question with a focus on binary classication problems. We
+present mlbench, a novel benchmark constructed by harvesting datasets from
+Kaggle competitions. We then compare the performance of the top winning code
+available from Kaggle with that of running machine learning clouds from both
+Azure and Amazon on mlbench. Our comparative study reveals the strength and
+weakness of existing machine learning clouds and points out potential future
+directions for improvement.
+</summary>
+    <author>
+      <name>Yu Liu</name>
+    </author>
+    <author>
+      <name>Hantian Zhang</name>
+    </author>
+    <author>
+      <name>Luyuan Zeng</name>
+    </author>
+    <author>
+      <name>Wentao Wu</name>
+    </author>
+    <author>
+      <name>Ce Zhang</name>
+    </author>
+    <link href="http://arxiv.org/abs/1707.09562v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1707.09562v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1909.01866v1</id>
+    <updated>2019-09-02T20:36:19Z</updated>
+    <published>2019-09-02T20:36:19Z</published>
+    <title>Understanding Bias in Machine Learning</title>
+    <summary>  Bias is known to be an impediment to fair decisions in many domains such as
+human resources, the public sector, health care etc. Recently, hope has been
+expressed that the use of machine learning methods for taking such decisions
+would diminish or even resolve the problem. At the same time, machine learning
+experts warn that machine learning models can be biased as well. In this
+article, our goal is to explain the issue of bias in machine learning from a
+technical perspective and to illustrate the impact that biased data can have on
+a machine learning model. To reach such a goal, we develop interactive plots to
+visualizing the bias learned from synthetic data.
+</summary>
+    <author>
+      <name>Jindong Gu</name>
+    </author>
+    <author>
+      <name>Daniela Oelke</name>
+    </author>
+    <arxiv:journal_ref xmlns:arxiv="http://arxiv.org/schemas/atom">1st Workshop on Visualization for AI Explainability in 2018 IEEE
+  Vis</arxiv:journal_ref>
+    <link href="http://arxiv.org/abs/1909.01866v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1909.01866v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/0904.3664v1</id>
+    <updated>2009-04-23T11:40:57Z</updated>
+    <published>2009-04-23T11:40:57Z</published>
+    <title>Introduction to Machine Learning: Class Notes 67577</title>
+    <summary>  Introduction to Machine learning covering Statistical Inference (Bayes, EM,
+ML/MaxEnt duality), algebraic and spectral methods (PCA, LDA, CCA, Clustering),
+and PAC learning (the Formal model, VC dimension, Double Sampling theorem).
+</summary>
+    <author>
+      <name>Amnon Shashua</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">109 pages, class notes of Machine Learning course given at the Hebrew
+  University of Jerusalem</arxiv:comment>
+    <link href="http://arxiv.org/abs/0904.3664v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/0904.3664v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

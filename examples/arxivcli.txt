@@ -1,0 +1,65 @@
+import requests
+from urllib.parse import quote
+
+class ArxivClient:
+    BASE_URL = "http://export.arxiv.org/api/query?"
+
+    FIELD_PREFIXES = {
+        "ti": "Title",
+        "au": "Author",
+        "abs": "Abstract",
+        "co": "Comment",
+        "jr": "Journal Reference",
+        "cat": "Subject Category",
+        "rn": "Report Number",
+        "id": "Id (use id_list instead)",
+        "all": "All of the above"
+    }
+
+    OPERATORS = [ "AND", "OR", "ANDNOT" ]
+    QUERY_PARAMETERS = [ "start", "max_results", "id_list", "search_query" ]
+
+    def __init__(self, max_results=10):
+        self.max_results = max_results
+
+    def search(self, search_query, start=0):
+        """Search arXiv with a constructed query."""
+        query_url = f"{self.BASE_URL}search_query={quote(search_query)}&start={start}&max_results={self.max_results}"
+        response = requests.get(query_url)
+        return response.text
+
+    def search_by_author(self, author, start=0):
+        """Search for articles by author."""
+        query = f"au:{author}"
+        return self.search(query, start)
+
+    def search_by_title(self, title, start=0):
+        """Search for articles by title."""
+        query = f"ti:{title}"
+        return self.search(query, start)
+
+    def search_by_abstract(self, abstract, start=0):
+        """Search for articles by abstract content."""
+        query = f"abs:{abstract}"
+        return self.search(query, start)
+
+    def search_with_date_range(self, author, start_date, end_date, start=0):
+        """Search for articles by author with a submitted date range."""
+        date_filter = f"submittedDate:[{start_date}+TO+{end_date}]"
+        query = f"au:{author}+AND+{date_filter}"
+        return self.search(query, start)
+
+    def advanced_search(self, conditions, start=0):
+        """Perform an advanced search with multiple conditions using Boolean operators."""
+        query = '+'.join(conditions)
+        return self.search(query, start)
+
+    def list_field_prefixes(self):
+        """Return the available field prefixes and their explanations."""
+        return self.FIELD_PREFIXES
+
+# Example usage
+if __name__ == "__main__":
+    client = ArxivClient()
+    print(client.search_by_author("del_maestro"))
+    print(client.list_field_prefixes())
