@@ -248,7 +248,7 @@ def works_filter_type(arg_val, **kwargs):
     if m is None:
         raise argparse.ArgumentTypeError(
             f"Invalid Work Filter Field\n {arg_val}\n"
-            f"Required one or more of:\n{excepted}",
+            f"Required one or more of:\n{expected}",
         )
     return arg_val
 
