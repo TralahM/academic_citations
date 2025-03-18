@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools >= 64.0", "wheel", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+version_file = "crossref/_version.py"
+
+[project]
+dynamic = ["version"]
+name = "crossref"
+description = "UnOffical Python Crossref.org API Wrapper and CLI."
+readme = { file = "README.md", content-type = "text/markdown" }
+authors = [{ name = "Tralah M Brian", email = "briantralah@gmail.com" }]
+maintainers = [{ name = "Tralah M Brian", email = "briantralah@gmail.com" }]
+license = { file = "LICENSE" }
+# license-files = ["LICEN[CS]E*"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.6",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Intended Audience :: Science/Researchers",
+  "Development Status :: 4 - Beta",
+  "Topic :: Research :: Cross-Referencing and Citation",
+]
+dependencies = [
+  "requests",
+  "requests-cache",
+  "retry",
+  "backoff",
+  "shtab",
+  "Pygments",
+]
+
+[project.scripts]
+crossref = "crossref.crossref_cli:main"
+
+[project.urls]
+Homepage = "https://github.com/TralahM/academic_citations"
+Documentation = "https://crossref.readthedocs.io/en/latest/"
+Issues = "https://github.com/TralahM/academic_citations/issues"
+Repository = "https://github.com/TralahM/academic_citations.git"

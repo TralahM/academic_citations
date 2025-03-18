@@ -4,3 +4,4 @@ build/*
 dist/*
 docs/_build/*
 .ropeproject/
+crossref/_version.py
